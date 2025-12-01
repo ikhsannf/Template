@@ -76,7 +76,7 @@ export default function About() {
   return (
     <>
       {/* About Section */}
-      <section id="about" className="min-h-screen bg-white dark:bg-gray-800 flex items-center justify-center px-6 pt-20 scroll-mt-20">
+      <section id="about" className="min-h-screen bg-white dark:bg-gray-800 flex items-center justify-center px-6 pt-20 pb-20 scroll-mt-20">
         <div className="container mx-auto max-w-6xl">
           {/* Header */}
           <motion.div

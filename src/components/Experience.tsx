@@ -187,11 +187,14 @@ export default function Experience() {
                         Want to know more about my journey?
                     </p>
                     <motion.button
+                        onClick={() => {
+                            document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
+                        }}
                         className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        Download Full CV
+                        View Full Profile
                     </motion.button>
                 </motion.div>
             </div>

@@ -88,7 +88,7 @@ export default function Tools() {
                                             whileHover={{ scale: 1.1, y: -5 }}
                                             className="group relative"
                                         >
-                                            <div className={`bg-gradient-to-br ${tool.color} p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center aspect-square`}>
+                                            <div className={`bg-gradient-to-br ${tool.color} p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center aspect-square select-none`}>
                                                 <div className="text-4xl mb-2 group-hover:scale-125 transition-transform duration-300">
                                                     {tool.icon}
                                                 </div>
@@ -108,7 +108,7 @@ export default function Tools() {
                         </motion.div>
                     ))}
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     )
 }
