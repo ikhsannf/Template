@@ -187,11 +187,20 @@ export default function Experience() {
                         Want to know more about my journey?
                     </p>
                     <motion.button
-                        className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+                        onClick={() => {
+                            const aboutSection = document.querySelector('#about')
+                            if (aboutSection) {
+                                aboutSection.scrollIntoView({ behavior: 'smooth' })
+                            }
+                        }}
+                        className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-2 mx-auto"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        Download Full CV
+                        <span>View Full Experience</span>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
                     </motion.button>
                 </motion.div>
             </div>
