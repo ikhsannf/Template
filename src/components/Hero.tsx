@@ -175,7 +175,7 @@ export default function Hero() {
 
                 {/* Instagram */}
                 <motion.a
-                  href="#"
+                  href="https://www.instagram.com/justsannn/"
                   className="text-gray-400 hover:text-pink-500 dark:hover:text-pink-400 transition duration-300"
                   whileHover={{ scale: 1.2, y: -5 }}
                   whileTap={{ scale: 0.9 }}
@@ -199,7 +199,7 @@ export default function Hero() {
 
                 {/* GitHub */}
                 <motion.a
-                  href="https://github.com/justsann"
+                  href="https://github.com/ikhsannf"
                   className="text-gray-400 hover:text-gray-700 dark:hover:text-white transition duration-300"
                   whileHover={{ scale: 1.2, y: -5 }}
                   whileTap={{ scale: 0.9 }}

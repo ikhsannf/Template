@@ -276,12 +276,13 @@ export default function About() {
 
       {/* Download CV Modal */}
       {showDownloadModal && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowDownloadModal(false)}>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full p-6"
+            onClick={(e) => e.stopPropagation()}
           >
             <div className="text-center">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
@@ -315,14 +316,16 @@ export default function About() {
                 </ul>
               </div>
 
-              <motion.button
-                onClick={() => setShowDownloadModal(false)}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg mb-4"
+              <motion.a
+                href="/cv/CV_Muh_Ikhsan_Fahmi.pdf"
+                download="CV_Muh_Ikhsan_Fahmi.pdf"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 shadow-lg mb-4 block text-center"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={() => setShowDownloadModal(false)}
               >
                 Download CV (PDF)
-              </motion.button>
+              </motion.a>
 
               <button
                 onClick={() => setShowDownloadModal(false)}
