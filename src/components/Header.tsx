@@ -17,6 +17,44 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Detect active section based on scroll position
+  useEffect(() => {
+    const sections = ['#home', '#about', '#projects', '#experience', '#skills', '#contact']
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0
+    }
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = `#${entry.target.id}`
+          setActiveSection(id)
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions)
+
+    sections.forEach((section) => {
+      const element = document.querySelector(section)
+      if (element) {
+        observer.observe(element)
+      }
+    })
+
+    return () => {
+      sections.forEach((section) => {
+        const element = document.querySelector(section)
+        if (element) {
+          observer.unobserve(element)
+        }
+      })
+    }
+  }, [])
+
   // Navigation items dengan ikon SVG
   const navItems = [
     {
@@ -87,8 +125,8 @@ export default function Header() {
   return (
     <motion.header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-200 dark:border-gray-700'
-          : 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md'
+        ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-200 dark:border-gray-700'
+        : 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md'
         }`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -154,8 +192,8 @@ export default function Header() {
                   href={item.href}
                   onClick={(e) => handleNavClick(item.href, e)}
                   className={`relative flex items-center space-x-2 px-3 py-2 rounded-lg font-medium text-xs transition-all duration-300 ${activeSection === item.href
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-gray-700/50'
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-gray-700/50'
                     }`}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
