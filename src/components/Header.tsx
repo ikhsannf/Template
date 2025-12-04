@@ -136,7 +136,7 @@ export default function Header() {
         delay: 0.2
       }}
     >
-      <div className="container mx-auto px-6 py-3">
+      <div className="container mx-auto px-4 sm:px-6 py-2 sm:py-3">
         <nav className="flex justify-between items-center">
           {/* Brand Logo - Left */}
           <motion.a
@@ -155,16 +155,16 @@ export default function Header() {
           >
             {/* Logo Icon */}
             <motion.div
-              className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg"
+              className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg"
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-white font-bold text-xl">S</span>
+              <span className="text-white font-bold text-lg sm:text-xl">S</span>
             </motion.div>
 
             {/* Brand Text */}
             <div className="hidden sm:block">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300 font-[family-name:var(--font-poppins)]">
+              <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300 font-[family-name:var(--font-poppins)]">
                 SannVibe
               </h1>
               <p className="text-[10px] text-gray-500 dark:text-gray-400 -mt-1 tracking-wider">
@@ -174,10 +174,10 @@ export default function Header() {
           </motion.a>
 
           {/* Right Side: Nav Items + Theme Toggle */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             {/* Nav Items */}
             <motion.div
-              className="flex items-center space-x-1 bg-gray-100/50 dark:bg-gray-800/50 rounded-xl p-1"
+              className="flex items-center space-x-0.5 sm:space-x-1 bg-gray-100/50 dark:bg-gray-800/50 rounded-lg sm:rounded-xl p-0.5 sm:p-1"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{
@@ -191,7 +191,7 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(item.href, e)}
-                  className={`relative flex items-center space-x-2 px-3 py-2 rounded-lg font-medium text-xs transition-all duration-300 ${activeSection === item.href
+                  className={`relative flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-md sm:rounded-lg font-medium text-[10px] sm:text-xs transition-all duration-300 ${activeSection === item.href
                     ? 'bg-blue-600 text-white shadow-md'
                     : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-gray-700/50'
                     }`}
@@ -215,8 +215,8 @@ export default function Header() {
                     {item.icon}
                   </motion.span>
 
-                  {/* Text - Hidden on mobile */}
-                  <span className="hidden md:block">{item.name}</span>
+                  {/* Text - Hidden on mobile and tablet */}
+                  <span className="hidden lg:block">{item.name}</span>
                 </motion.a>
               ))}
             </motion.div>

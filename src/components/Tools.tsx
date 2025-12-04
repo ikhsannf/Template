@@ -42,26 +42,26 @@ export default function Tools() {
     ]
 
     return (
-        <section className="py-20 bg-white dark:bg-gray-800">
-            <div className="container mx-auto px-4">
+        <section className="py-16 sm:py-20 lg:py-24 bg-white dark:bg-gray-800">
+            <div className="container mx-auto px-4 sm:px-6">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="text-center mb-12"
+                    className="text-center mb-10 sm:mb-12 lg:mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
                         Tools & Technologies
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                         Technologies and tools I use to bring ideas to life
                     </p>
                 </motion.div>
 
                 {/* Tools by Category */}
-                <div className="space-y-12">
+                <div className="space-y-10 sm:space-y-12 lg:space-y-16">
                     {categories.map((category, catIndex) => (
                         <motion.div
                             key={category.id}
@@ -70,12 +70,12 @@ export default function Tools() {
                             transition={{ duration: 0.6, delay: catIndex * 0.1 }}
                             viewport={{ once: true }}
                         >
-                            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-6 flex items-center gap-3">
-                                <span className="text-3xl">{category.emoji}</span>
+                            <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-200 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                                <span className="text-2xl sm:text-3xl">{category.emoji}</span>
                                 {category.label}
                             </h3>
 
-                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-3 sm:gap-4">
                                 {tools
                                     .filter(tool => tool.category === category.id)
                                     .map((tool, index) => (
@@ -88,17 +88,17 @@ export default function Tools() {
                                             whileHover={{ scale: 1.1, y: -5 }}
                                             className="group relative"
                                         >
-                                            <div className={`bg-gradient-to-br ${tool.color} p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center aspect-square select-none`}>
-                                                <div className="text-4xl mb-2 group-hover:scale-125 transition-transform duration-300">
+                                            <div className={`bg-gradient-to-br ${tool.color} p-4 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center aspect-square select-none`}>
+                                                <div className="text-2xl sm:text-3xl lg:text-4xl mb-1 sm:mb-2 group-hover:scale-125 transition-transform duration-300">
                                                     {tool.icon}
                                                 </div>
-                                                <div className="text-white font-bold text-sm text-center">
+                                                <div className="text-white font-bold text-[10px] sm:text-xs lg:text-sm text-center leading-tight">
                                                     {tool.name}
                                                 </div>
                                             </div>
 
                                             {/* Tooltip */}
-                                            <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-900 dark:bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                                            <div className="absolute -top-10 sm:-top-12 left-1/2 transform -translate-x-1/2 bg-gray-900 dark:bg-gray-700 text-white px-2 sm:px-3 py-1 sm:py-2 rounded-lg text-xs sm:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-10">
                                                 {tool.name}
                                                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-900 dark:border-t-gray-700"></div>
                                             </div>
@@ -108,7 +108,7 @@ export default function Tools() {
                         </motion.div>
                     ))}
                 </div>
-            </div >
-        </section >
+            </div>
+        </section>
     )
 }

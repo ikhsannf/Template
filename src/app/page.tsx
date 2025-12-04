@@ -40,11 +40,11 @@ export default function Home() {
       <Experience />
 
       {/* Skills Section */}
-      <section id="skills" className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center px-6 pt-20 scroll-mt-20">
+      <section id="skills" className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 lg:py-24 scroll-mt-20">
         <AnimatedSection>
           <div className="container mx-auto max-w-6xl">
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-12"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-800 dark:text-white mb-10 sm:mb-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -60,20 +60,20 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="mb-6 group"
+                  className="mb-5 sm:mb-6 group"
                   whileHover={{ scale: 1.02, x: 5 }}
                 >
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-700 dark:text-gray-300 font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  <div className="flex justify-between mb-1.5 sm:mb-2">
+                    <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                       {skill.name}
                     </span>
-                    <span className="text-blue-600 dark:text-blue-400 font-medium">
+                    <span className="text-sm sm:text-base text-blue-600 dark:text-blue-400 font-medium">
                       {skill.level}%
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 sm:h-3 overflow-hidden">
                     <motion.div
-                      className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full"
+                      className="bg-gradient-to-r from-blue-500 to-purple-600 h-2.5 sm:h-3 rounded-full"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
                       viewport={{ once: false, amount: 0.3 }}
@@ -94,10 +94,11 @@ export default function Home() {
       <Contact />
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8">
+      <footer className="bg-gray-800 text-white py-6 sm:py-8">
         <AnimatedSection>
           <div className="container mx-auto px-4 text-center">
             <motion.p
+              className="text-sm sm:text-base"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
@@ -106,7 +107,7 @@ export default function Home() {
               © 2024 Muh. Ikhsan Fahmi. All rights reserved.
             </motion.p>
             <motion.p
-              className="mt-2 text-gray-400"
+              className="mt-1.5 sm:mt-2 text-gray-400 text-xs sm:text-sm"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}

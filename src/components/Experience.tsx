@@ -88,20 +88,20 @@ export default function Experience() {
     }
 
     return (
-        <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-900 scroll-mt-20">
-            <div className="container mx-auto px-4 max-w-4xl">
+        <section id="experience" className="py-16 sm:py-20 lg:py-24 bg-gray-50 dark:bg-gray-900 scroll-mt-20">
+            <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-12 sm:mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
                         Experience & Education
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                         My journey through education, work experiences, and achievements
                     </p>
                 </motion.div>
@@ -109,10 +109,10 @@ export default function Experience() {
                 {/* Timeline */}
                 <div className="relative">
                     {/* Vertical Line */}
-                    <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 transform md:-translate-x-1/2" />
+                    <div className="absolute left-6 sm:left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 transform md:-translate-x-1/2" />
 
                     {/* Timeline Items */}
-                    <div className="space-y-12">
+                    <div className="space-y-8 sm:space-y-10 lg:space-y-12">
                         {timeline.map((item, index) => (
                             <motion.div
                                 key={item.id}
@@ -124,40 +124,40 @@ export default function Experience() {
                                     } flex-row`}
                             >
                                 {/* Content Card */}
-                                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'} pl-16 md:pl-0`}>
+                                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'} pl-14 sm:pl-16 md:pl-0`}>
                                     <motion.div
-                                        className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group"
+                                        className="bg-white dark:bg-gray-800 p-4 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group"
                                         whileHover={{ scale: 1.02, y: -5 }}
                                     >
                                         {/* Year Badge */}
-                                        <div className="flex items-center justify-between mb-3">
-                                            <span className="text-sm font-bold text-blue-600 dark:text-blue-400">
+                                        <div className="flex items-center justify-between mb-2 sm:mb-3 flex-wrap gap-2">
+                                            <span className="text-xs sm:text-sm font-bold text-blue-600 dark:text-blue-400">
                                                 {item.year}
                                             </span>
-                                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${getTypeBadge(item.type).color}`}>
+                                            <span className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium ${getTypeBadge(item.type).color}`}>
                                                 {getTypeBadge(item.type).label}
                                             </span>
                                         </div>
 
                                         {/* Title & Organization */}
-                                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+                                        <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
                                             {item.title}
                                         </h3>
-                                        <p className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-3">
+                                        <p className="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-2 sm:mb-3">
                                             {item.organization}
                                         </p>
 
                                         {/* Description */}
-                                        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                        <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed">
                                             {item.description}
                                         </p>
                                     </motion.div>
                                 </div>
 
                                 {/* Center Icon */}
-                                <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 flex items-center justify-center">
+                                <div className="absolute left-6 sm:left-8 md:left-1/2 transform md:-translate-x-1/2 flex items-center justify-center">
                                     <motion.div
-                                        className={`w-16 h-16 rounded-full bg-gradient-to-br ${getTypeColor(item.type)} flex items-center justify-center text-2xl shadow-lg border-4 border-white dark:border-gray-900`}
+                                        className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br ${getTypeColor(item.type)} flex items-center justify-center text-xl sm:text-2xl shadow-lg border-4 border-white dark:border-gray-900`}
                                         initial={{ scale: 0 }}
                                         whileInView={{ scale: 1 }}
                                         transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
@@ -181,16 +181,16 @@ export default function Experience() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
                     viewport={{ once: true }}
-                    className="text-center mt-16"
+                    className="text-center mt-12 sm:mt-16"
                 >
-                    <p className="text-gray-600 dark:text-gray-400 mb-6">
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
                         Want to know more about my journey?
                     </p>
                     <motion.button
                         onClick={() => {
                             document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
                         }}
-                        className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+                        className="px-6 sm:px-8 py-2.5 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-200"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >

@@ -76,7 +76,7 @@ export default function About() {
   return (
     <>
       {/* About Section */}
-      <section id="about" className="min-h-screen bg-white dark:bg-gray-800 flex items-center justify-center px-6 pt-20 pb-20 scroll-mt-20">
+      <section id="about" className="min-h-screen bg-white dark:bg-gray-800 flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 lg:py-24 scroll-mt-20">
         <div className="container mx-auto max-w-6xl">
           {/* Header */}
           <motion.div
@@ -84,17 +84,17 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-8 md:mb-12"
+            className="text-center mb-10 sm:mb-12 lg:mb-16"
           >
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2 md:mb-3">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">
               About Me
             </h1>
-            <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Passionate about creating innovative solutions through technology
             </p>
           </motion.div>
 
-          <div className="flex flex-col lg:flex-row gap-4 md:gap-6 items-center lg:items-start">
+          <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-12 items-center lg:items-start">
             {/* Left Column - Photo Card */}
             <div className="lg:w-1/2 flex justify-center lg:justify-start w-full">
               <motion.div
@@ -106,7 +106,7 @@ export default function About() {
               >
                 {/* Main Photo Card */}
                 <motion.div
-                  className="w-64 h-80 sm:w-72 sm:h-[28rem] md:w-80 md:h-96 bg-gradient-to-br from-blue-400 to-purple-600 rounded-xl md:rounded-2xl shadow-2xl overflow-hidden relative"
+                  className="w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-[22rem] lg:w-80 lg:h-96 bg-gradient-to-br from-blue-400 to-purple-600 rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden relative"
                   whileHover={{ scale: 1.05, rotate: 2 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
@@ -120,7 +120,7 @@ export default function About() {
 
                   {/* Floating Elements */}
                   <motion.div
-                    className="absolute -top-4 -left-4 w-20 h-20 bg-yellow-400 rounded-full opacity-80"
+                    className="absolute -top-4 -left-4 w-16 h-16 sm:w-20 sm:h-20 bg-yellow-400 rounded-full opacity-80"
                     animate={{
                       y: [0, -10, 0],
                       scale: [1, 1.1, 1]
@@ -132,7 +132,7 @@ export default function About() {
                     }}
                   ></motion.div>
                   <motion.div
-                    className="absolute -bottom-6 -right-6 w-24 h-24 bg-pink-400 rounded-full opacity-70"
+                    className="absolute -bottom-6 -right-6 w-20 h-20 sm:w-24 sm:h-24 bg-pink-400 rounded-full opacity-70"
                     animate={{
                       y: [0, 15, 0],
                       scale: [1, 1.15, 1]
@@ -158,7 +158,7 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-4 md:p-5"
+                className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-5 lg:p-6"
               >
                 {/* Hello There Section */}
                 <motion.div
@@ -166,12 +166,12 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="mb-3"
+                  className="mb-4 sm:mb-5"
                 >
-                  <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">
                     Hello There!
                   </h2>
-                  <p className="text-gray-600 dark:text-gray-300 text-xs md:text-sm leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm lg:text-base leading-relaxed">
                     Saya adalah mahasiswa Teknologi Informasi di Telkom University yang memiliki passion dalam Graphic Design, dan UI/UX Design. Saya senang mempelajari hal-hal baru seperti saat ini, saya tertarik memahami Frontend Development dan selalu berusaha untuk mengembangkan kemampuan saya dalam bidang desain, khususnya dalam Graphic Design dan UI/UX design.
                   </p>
                 </motion.div>
@@ -182,7 +182,7 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="grid grid-cols-2 gap-2 mb-3"
+                  className="grid grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-5"
                 >
                   {infoCards.map((card, index) => (
                     <motion.div
@@ -192,19 +192,19 @@ export default function About() {
                       transition={{ duration: 0.4, delay: 0.1 * index + 0.5 }}
                       viewport={{ once: false, amount: 0.3 }}
                       whileHover={{ scale: 1.02, y: -2 }}
-                      className="bg-gray-50 dark:bg-gray-700 rounded-lg p-2.5 shadow-sm hover:shadow-md transition-all duration-100 cursor-pointer group border border-transparent hover:border-gray-200 dark:hover:border-gray-600"
+                      className="bg-gray-50 dark:bg-gray-700 rounded-lg p-2.5 sm:p-3 shadow-sm hover:shadow-md transition-all duration-100 cursor-pointer group border border-transparent hover:border-gray-200 dark:hover:border-gray-600"
                     >
-                      <div className="flex items-center space-x-2.5">
-                        <div className="w-9 h-9 bg-gray-800 dark:bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 dark:group-hover:bg-blue-500 transition-colors duration-100">
+                      <div className="flex items-center space-x-2 sm:space-x-2.5">
+                        <div className="w-8 h-8 sm:w-9 sm:h-9 bg-gray-800 dark:bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 dark:group-hover:bg-blue-500 transition-colors duration-100">
                           <div className="text-white flex items-center justify-center">
                             {card.icon}
                           </div>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h3 className="font-medium text-gray-500 dark:text-gray-400 text-[10px] md:text-xs mb-0.5">
+                          <h3 className="font-medium text-gray-500 dark:text-gray-400 text-[10px] sm:text-xs mb-0.5">
                             {card.title}
                           </h3>
-                          <p className="text-gray-900 dark:text-white text-[11px] md:text-xs font-semibold leading-tight">
+                          <p className="text-gray-900 dark:text-white text-[10px] sm:text-xs font-semibold leading-tight truncate">
                             {card.content}
                           </p>
                         </div>
@@ -219,12 +219,12 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="mb-3"
+                  className="mb-3 sm:mb-4"
                 >
-                  <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">
                     Interests & Focus
                   </h3>
-                  <div className="flex flex-wrap gap-2 mb-2">
+                  <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
                     {interests.map((interest, index) => (
                       <motion.span
                         key={interest}
@@ -232,7 +232,7 @@ export default function About() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.4, delay: 0.1 * index + 0.6 }}
                         viewport={{ once: false, amount: 0.3 }}
-                        className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2.5 py-1 rounded-full text-[10px] md:text-xs font-medium hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors duration-100"
+                        className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-medium hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors duration-100"
                       >
                         {interest}
                       </motion.span>
@@ -240,19 +240,19 @@ export default function About() {
                   </div>
 
                   {/* Divider */}
-                  <div className="border-t border-gray-200 dark:border-gray-600 my-3"></div>
+                  <div className="border-t border-gray-200 dark:border-gray-600 my-3 sm:my-4"></div>
 
                   {/* Download CV Button */}
                   <motion.button
                     onClick={() => setShowDownloadModal(true)}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold text-xs md:text-sm transition-all duration-200 shadow-lg flex items-center justify-center space-x-2 relative overflow-hidden group w-full"
-                    whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(37, 99, 235, 0.4)" }}
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 shadow-lg flex items-center justify-center space-x-2 relative overflow-hidden group w-full"
+                    whileHover={{ scale: 1.02, boxShadow: "0 10px 25px rgba(37, 99, 235, 0.4)" }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <span className="relative z-10 flex items-center">
                       Download My CV
                       <motion.svg
-                        className="w-3.5 h-3.5 md:w-4 md:h-4 ml-2"
+                        className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-2"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -281,22 +281,22 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full p-6"
+            className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-2xl max-w-md w-full p-5 sm:p-6"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 Download My CV
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-5 sm:mb-6">
                 Get my latest resume with all my experience and skills.
               </p>
 
-              <div className="text-left mb-6">
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
+              <div className="text-left mb-5 sm:mb-6">
+                <h4 className="font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 text-sm sm:text-base">
                   What's included:
                 </h4>
-                <ul className="text-gray-600 dark:text-gray-300 space-y-2">
+                <ul className="text-gray-600 dark:text-gray-300 space-y-1.5 sm:space-y-2 text-sm">
                   <li className="flex items-center space-x-2">
                     <span className="text-green-500">✓</span>
                     <span>Professional experience & skills</span>
@@ -319,7 +319,7 @@ export default function About() {
               <motion.a
                 href="/cv/CV_Muh_Ikhsan_Fahmi.pdf"
                 download="CV_Muh_Ikhsan_Fahmi.pdf"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 shadow-lg mb-4 block text-center"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg mb-3 sm:mb-4 block text-center"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setShowDownloadModal(false)}
@@ -329,7 +329,7 @@ export default function About() {
 
               <button
                 onClick={() => setShowDownloadModal(false)}
-                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors duration-300"
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base"
               >
                 Maybe later
               </button>
